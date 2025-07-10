@@ -1219,7 +1219,7 @@ code {
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
-  transition: var(--transition);
+  transition: var(--transition);  
 }
 
 .tab-button:hover,
