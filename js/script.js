@@ -29,8 +29,22 @@ const debounce = (func, wait, immediate) => {
 const menuBtn = document.querySelector('.menu-btn');
 const mobileMenu = document.querySelector('.mobile-menu');
 const body = document.body;
+const header = document.querySelector('.header');
 
 let menuOpen = false;
+
+const setMenuAccessibility = () => {
+  if (menuBtn) {
+    menuBtn.setAttribute('aria-expanded', menuOpen ? 'true' : 'false');
+  }
+  if (mobileMenu) {
+    mobileMenu.setAttribute('aria-hidden', menuOpen ? 'false' : 'true');
+  }
+};
+
+const setBodyScrollLocked = (locked) => {
+  body.style.overflow = locked ? 'hidden' : '';
+};
 
 const toggleMobileMenu = () => {
   if (!menuOpen) {
@@ -38,11 +52,18 @@ const toggleMobileMenu = () => {
     mobileMenu.classList.add('is-visible');
     body.classList.add('blur');
     menuOpen = true;
+    setBodyScrollLocked(true);
+    if (header) {
+      header.classList.remove('hidden');
+    }
+    setMenuAccessibility();
   } else {
     menuBtn.classList.remove('active');
     mobileMenu.classList.remove('is-visible');
     body.classList.remove('blur');
     menuOpen = false;
+    setBodyScrollLocked(false);
+    setMenuAccessibility();
   }
 };
 
@@ -52,12 +73,17 @@ const closeMobileMenu = () => {
     mobileMenu.classList.remove('is-visible');
     body.classList.remove('blur');
     menuOpen = false;
+    setBodyScrollLocked(false);
+    setMenuAccessibility();
   }
 };
 
 // Event listeners for mobile menu
 if (menuBtn) {
-  menuBtn.addEventListener('click', toggleMobileMenu);
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
+  });
 }
 
 // Close mobile menu when clicking outside
@@ -75,22 +101,35 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===== HEADER SCROLL BEHAVIOR =====
-const header = document.querySelector('.header');
 let lastScrollTop = 0;
 let scrollDirection = 'up';
 let ticking = false;
 
 const handleScroll = () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
+
   if (scrollTop > lastScrollTop) {
     scrollDirection = 'down';
   } else {
     scrollDirection = 'up';
   }
-  
+
   lastScrollTop = scrollTop;
-  
+
+  // While the drawer is open, do not auto-hide the header (scroll still fires on some devices)
+  if (menuOpen) {
+    if (header) {
+      header.classList.remove('hidden');
+    }
+    ticking = false;
+    return;
+  }
+
+  if (!header) {
+    ticking = false;
+    return;
+  }
+
   if (scrollTop > 100) {
     header.classList.add('scrolled');
     if (scrollDirection === 'down' && scrollTop > 200) {
@@ -102,7 +141,7 @@ const handleScroll = () => {
     header.classList.remove('scrolled');
     header.classList.remove('hidden');
   }
-  
+
   ticking = false;
 };
 
@@ -161,17 +200,12 @@ const setActiveTab = (index) => {
   tabButtons[index].setAttribute('tabindex', '0');
   tabPanels[index].removeAttribute('hidden');
   
-  // Update indicator position
+  // Move only the ::before indicator (not the whole tab list)
   if (tabList) {
-    const tabHeight = tabButtons[0].offsetHeight;
-    tabList.style.setProperty('--tab-height', `${tabHeight}px`);
-    
-    if (window.innerWidth > 600) {
-      tabList.style.transform = `translateY(${index * tabHeight}px)`;
-    } else {
-      const tabWidth = tabButtons[0].offsetWidth;
-      tabList.style.transform = `translateX(${index * tabWidth}px)`;
-    }
+    const btn = tabButtons[index];
+    tabList.style.setProperty('--tab-height', `${btn.offsetHeight}px`);
+    tabList.style.setProperty('--tab-index', String(index));
+    tabList.style.removeProperty('transform');
   }
   
   activeTabIndex = index;
@@ -353,6 +387,8 @@ document.addEventListener('keydown', (e) => {
 
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
+  setMenuAccessibility();
+
   // Set initial states
   if (tabButtons.length > 0) {
     setActiveTab(0);
