@@ -827,39 +827,57 @@ code {
   top: 0;
   bottom: 0;
   right: 0;
-  width: min(75vw, 400px);
-  height: 100vh;
+  width: min(85vw, 400px);
+  max-width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   outline: 0;
   background: linear-gradient(165deg, rgba(18, 28, 51, 0.98) 0%, rgba(7, 15, 31, 0.99) 100%);
   border-left: 1px solid var(--glass-border);
   box-shadow: -16px 0 48px rgba(2, 12, 27, 0.55);
   z-index: 9;
-  transform: translateX(100vw);
+  transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.35s var(--easing), visibility 0.35s;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.is-visible {
-  transform: translateX(0vw);
+  transform: translateX(0);
   visibility: visible;
 }
 
 .mobile-menu nav {
+  counter-reset: menu-item 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   width: 100%;
-  height: 100%;
-  padding: 50px 10px;
+  min-height: 100%;
+  box-sizing: border-box;
+  /* Clear fixed header + notch / status bar */
+  padding-top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 0.75rem);
+  padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
 }
 
 .mobile-menu ol {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
   padding: 0;
   margin: 0;
-  margin-top: 3.5rem;
   list-style: none;
   width: 100%;
   text-align: center;
@@ -867,36 +885,56 @@ code {
 
 .mobile-menu li {
   position: relative;
-  margin: 0 auto 20px;
-  counter-increment: item 1;
+  width: 100%;
+  max-width: 18rem;
+  margin: 0;
+  counter-increment: menu-item 1;
   font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
 }
 
 .mobile-menu li:before {
-  content: "0" counter(item) ".";
+  content: counter(menu-item, decimal-leading-zero) ".";
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.35rem;
   color: var(--green);
-  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .mobile-menu a {
-  /* display: inline-block; */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
   text-decoration: none;
   text-decoration-skip-ink: auto;
-  color: inherit;
+  color: var(--lightest-slate);
   position: relative;
-  transition: var(--transition);
+  transition: color 0.2s ease, background-color 0.2s ease;
   font-family: var(--font-mono);
-  width: 100%;
-  padding: 3px 20px 20px;
+  font-weight: 500;
+  padding: 0.65rem 1rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus {
+  color: var(--green);
+  background-color: var(--green-tint);
 }
 
 .mobile-menu .button {
-  padding: 18px 50px;
-  margin: 10% auto 0;
-  max-width: 200px;
+  flex-shrink: 0;
+  align-self: center;
+  width: 100%;
+  max-width: 220px;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  padding: 1rem 1.5rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* ===== SOCIAL LINKS ===== */
