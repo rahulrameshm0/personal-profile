@@ -1062,6 +1062,7 @@ code {
   min-height: 100vh;
   height: 100vh;
   padding: 0;
+  margin-top: 4rem;
   position: relative;
 }
 
@@ -1090,6 +1091,7 @@ code {
 
 .hero h2.big-heading {
   color: var(--lightest-slate);
+  font-size: 5rem;
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -1108,6 +1110,8 @@ code {
   line-height: 1.1;
   max-width: 18ch;
   font-weight: 600;
+  /* font-size: 4rem; */
+  line-break: 1;
 }
 
 .hero p {
