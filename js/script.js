@@ -30,6 +30,60 @@ const menuBtn = document.querySelector('.menu-btn');
 const mobileMenu = document.querySelector('.mobile-menu');
 const body = document.body;
 const header = document.querySelector('.header');
+const themeToggle = document.querySelector('#theme-toggle');
+const themeStorageKey = 'rahul-portfolio-theme';
+const systemTheme = window.matchMedia('(prefers-color-scheme: light)');
+
+const getSavedTheme = () => {
+  try {
+    return window.localStorage.getItem(themeStorageKey);
+  } catch (error) {
+    return null;
+  }
+};
+
+const setTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+
+  if (themeToggle) {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    const actionLabel = `Switch to ${nextTheme} mode`;
+    themeToggle.setAttribute('aria-label', actionLabel);
+    themeToggle.setAttribute('title', actionLabel);
+    themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+  }
+};
+
+let savedTheme = getSavedTheme();
+if (savedTheme !== 'light' && savedTheme !== 'dark') {
+  savedTheme = null;
+}
+setTheme(savedTheme || (systemTheme.matches ? 'light' : 'dark'));
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    savedTheme = nextTheme;
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch (error) {
+      // Theme switching still works for this page when storage is unavailable.
+    }
+  });
+}
+
+const updateSystemTheme = (event) => {
+  if (!savedTheme) {
+    setTheme(event.matches ? 'light' : 'dark');
+  }
+};
+
+if (systemTheme.addEventListener) {
+  systemTheme.addEventListener('change', updateSystemTheme);
+} else if (systemTheme.addListener) {
+  systemTheme.addListener(updateSystemTheme);
+}
 
 let menuOpen = false;
 
@@ -188,17 +242,27 @@ const tabList = document.querySelector('.tab-list');
 let activeTabIndex = 0;
 
 const setActiveTab = (index) => {
+  if (!tabButtons[index]) {
+    return;
+  }
+
   // Remove active state from all tabs
   tabButtons.forEach((btn, i) => {
     btn.setAttribute('aria-selected', 'false');
     btn.setAttribute('tabindex', '-1');
-    tabPanels[i].setAttribute('hidden', '');
+    const panel = document.getElementById(btn.getAttribute('aria-controls')) || tabPanels[i];
+    if (panel) {
+      panel.hidden = true;
+    }
   });
   
   // Set active state for selected tab
   tabButtons[index].setAttribute('aria-selected', 'true');
   tabButtons[index].setAttribute('tabindex', '0');
-  tabPanels[index].removeAttribute('hidden');
+  const activePanel = document.getElementById(tabButtons[index].getAttribute('aria-controls')) || tabPanels[index];
+  if (activePanel) {
+    activePanel.hidden = false;
+  }
   
   // Move only the ::before indicator (not the whole tab list)
   if (tabList) {
@@ -245,6 +309,8 @@ if (tabButtons.length > 0) {
 // ===== SHOW MORE PROJECTS FUNCTIONALITY =====
 const showMoreButton = document.querySelector('#showMoreButton');
 const projectCards = document.querySelectorAll('.project-card');
+const showMoreText = showMoreButton?.querySelector('.more-button-text');
+const showMoreIcon = showMoreButton?.querySelector('.more-button-icon');
 
 let showingMore = false;
 
@@ -254,14 +320,20 @@ const toggleProjects = () => {
   if (!showingMore) {
     hiddenProjects.forEach(project => {
       project.style.display = 'block';
+      project.classList.add('just-revealed');
     });
-    showMoreButton.textContent = 'Show Less';
+    showMoreText.textContent = 'Show fewer projects';
+    showMoreIcon.textContent = '↑';
+    showMoreButton.setAttribute('aria-expanded', 'true');
     showingMore = true;
   } else {
     hiddenProjects.forEach(project => {
       project.style.display = 'none';
+      project.classList.remove('just-revealed');
     });
-    showMoreButton.textContent = 'Show More';
+    showMoreText.textContent = 'Show all projects';
+    showMoreIcon.textContent = '↓';
+    showMoreButton.setAttribute('aria-expanded', 'false');
     showingMore = false;
   }
 };
@@ -271,24 +343,24 @@ if (showMoreButton) {
 }
 
 // ===== SCROLL REVEAL ANIMATIONS =====
-const sr = ScrollReveal({
-  origin: 'bottom',
-  distance: '20px',
-  duration: 500,
-  delay: 200,
-  rotate: { x: 0, y: 0, z: 0 },
-  opacity: 0,
-  scale: 1,
-  easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-  mobile: true,
-  reset: false,
-  useDelay: 'always',
-  viewFactor: 0.25,
-  viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
-});
+// Apply scroll reveal only when the optional library is available.
+if (typeof ScrollReveal === 'function') {
+  const sr = ScrollReveal({
+    origin: 'bottom',
+    distance: '20px',
+    duration: 500,
+    delay: 200,
+    rotate: { x: 0, y: 0, z: 0 },
+    opacity: 0,
+    scale: 1,
+    easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+    mobile: true,
+    reset: false,
+    useDelay: 'always',
+    viewFactor: 0.25,
+    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
+  });
 
-// Apply scroll reveal to elements
-if (typeof ScrollReveal !== 'undefined') {
   sr.reveal('.hero h1', { delay: 100 });
   sr.reveal('.hero h2', { delay: 200 });
   sr.reveal('.hero h3', { delay: 300 });
@@ -408,3 +480,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== GLOBAL FUNCTIONS =====
 window.closeMobileMenu = closeMobileMenu;
 
+// ===== ANALYTICS =====
+window.plausible =
+  window.plausible ||
+  function () {
+    (window.plausible.q = window.plausible.q || []).push(arguments);
+  };
+
+window.plausible("custom-pageview", {
+  props: {
+    domain: window.location.host,
+  },
+});
