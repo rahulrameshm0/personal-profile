@@ -34,6 +34,20 @@ const themeToggle = document.querySelector('#theme-toggle');
 const themeStorageKey = 'rahul-portfolio-theme';
 const systemTheme = window.matchMedia('(prefers-color-scheme: light)');
 
+document.addEventListener('click', (event) => {
+  const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+  if (!link) return;
+
+  const destination = new URL(link.href, window.location.href);
+  if (destination.pathname.endsWith('/contact.html') && destination.pathname !== window.location.pathname) {
+    try {
+      window.sessionStorage.setItem('contact-page-entering', '1');
+    } catch (error) {
+      // The contact page remains usable if session storage is unavailable.
+    }
+  }
+});
+
 const getSavedTheme = () => {
   try {
     return window.localStorage.getItem(themeStorageKey);
@@ -90,6 +104,8 @@ let menuOpen = false;
 const setMenuAccessibility = () => {
   if (menuBtn) {
     menuBtn.setAttribute('aria-expanded', menuOpen ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', menuOpen ? 'Close navigation menu' : 'Open navigation menu');
+    menuBtn.setAttribute('title', menuOpen ? 'Close menu' : 'Open menu');
   }
   if (mobileMenu) {
     mobileMenu.setAttribute('aria-hidden', menuOpen ? 'false' : 'true');
