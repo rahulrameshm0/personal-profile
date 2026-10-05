@@ -1621,7 +1621,7 @@ main > section:not(.hero) {
 }
 
 /* A connection map gives the contact area its own visual signature. */
-:root { --font-sans: "Inter", Arial, sans-serif; }
+:root { --font-sans: "Space Grotesk", "Inter", Arial, sans-serif; }
 
 #contact {
   min-height: 460px;
