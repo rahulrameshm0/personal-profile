@@ -686,6 +686,11 @@ main > section:not(.hero) {
   border-top: 0;
 }
 
+/* Keep the work heading close to its first project. */
+#projects > .numbered-heading {
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+}
+
 #projects > .inner > .project:not(:last-of-type) {
   margin-bottom: 0;
 }
@@ -708,19 +713,48 @@ main > section:not(.hero) {
 }
 
 #projects .project-image a {
+  position: relative;
   display: block;
   overflow: hidden;
   aspect-ratio: 1.45;
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border: 1px solid var(--green-border);
+  border-radius: 18px;
   background: var(--surface-solid);
-  transition: border-color 250ms ease, box-shadow 250ms ease;
+  box-shadow: 0 14px 34px var(--navy-shadow);
+  transition: border-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+#projects .project-image a::after {
+  content: "View project  ↗";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(12, 24, 36, 0.82);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  backdrop-filter: blur(8px);
+}
+
+#projects .project-image a:hover::after,
+#projects .project-image a:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #projects .project:hover .project-image a,
 #projects .project-image a:focus-visible {
   border-color: var(--green-muted);
   box-shadow: 0 18px 40px var(--navy-shadow);
+  transform: translateY(-2px);
 }
 
 #projects .project-image a::before {
@@ -743,8 +777,27 @@ main > section:not(.hero) {
 }
 
 #projects .project-overline {
-  margin: 0 0 15px;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 13px;
+  padding: 7px 11px;
+  border: 1px solid var(--green-border);
+  border-radius: 999px;
+  background: var(--green-tint);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .025em;
+}
+
+#projects .project-overline::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--green-tint);
 }
 
 #projects .project-title {
@@ -1694,6 +1747,10 @@ main > section:not(.hero) {
   .footer-link-arrow,
   .footer-top,
   .footer-top span {
+    transition: none;
+  }
+
+  #projects .project-image a::after {
     transition: none;
   }
 }
