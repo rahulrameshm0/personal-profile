@@ -24,8 +24,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=20261005-3" />
-    <link rel="stylesheet" href="css/redesign.css?v=20261006-8" />
-    <script src="js/script.js?v=20261005-6" defer></script>
+    <link rel="stylesheet" href="css/redesign.css?v=20261009-1" />
+    <script src="js/script.js?v=20261009-1" defer></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,6 +54,7 @@
           <ol>
             <li><a href="#about">About</a></li>
             <li><a href="#jobs">Experience</a></li>
+            <li><a href="#learning">Learning</a></li>
             <li><a href="#projects">Work</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -98,6 +99,7 @@
         <ol>
           <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
           <li><a href="#jobs" onclick="closeMobileMenu()">Experience</a></li>
+          <li><a href="#learning" onclick="closeMobileMenu()">Learning</a></li>
           <li><a href="#projects" onclick="closeMobileMenu()">Work</a></li>
           <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
           <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
@@ -260,207 +262,71 @@
 
         <!-- Experience Section -->
         <section id="jobs" class="section">
-          <h2 class="numbered-heading">Experience &amp; learning</h2>
+          <h2 class="numbered-heading">Experience</h2>
           <div class="inner">
-            <div class="jobs-tabs">
-              <div class="tab-list" role="tablist" aria-label="Job tabs">
-                <button
-                  class="tab-button"
-                  type="button"
-                  id="tab-0"
-                  role="tab"
-                  tabindex="0"
-                  aria-selected="true"
-                  aria-controls="panel-0"
-                >
-                  <span>Novox EdTech</span>
-                </button>
-                <button
-                  class="tab-button"
-                  type="button"
-                  id="tab-1"
-                  role="tab"
-                  tabindex="-1"
-                  aria-selected="false"
-                  aria-controls="panel-1"
-                >
-                  <span>Education</span>
-                </button>
-                <button
-                  class="tab-button"
-                  type="button"
-                  id="tab-2"
-                  role="tab"
-                  tabindex="-1"
-                  aria-selected="false"
-                  aria-controls="panel-2"
-                >
-                  <span>Certifications</span>
-                </button>
+            <article class="experience-entry">
+              <header class="experience-header">
+                <div class="experience-heading">
+                  <h3>Frontend &amp; Backend Intern</h3>
+                  <p>at <a href="https://novoxedtechllp.com/" class="inline-link" target="_blank" rel="noopener noreferrer">Novox EdTech <span aria-hidden="true">↗</span></a></p>
+                </div>
+                <p class="experience-period">Internship Period</p>
+              </header>
+              <ul class="experience-list">
+                <li><strong>Frontend</strong><span>Built login interfaces, product pages, and basic dashboards using HTML, CSS, and JavaScript.</span></li>
+                <li><strong>Backend</strong><span>Worked with Django and PostgreSQL in full-stack development.</span></li>
+                <li><strong>Version control</strong><span>Used Git branching and stashing workflows to manage changes.</span></li>
+                <li><strong>Teamwork</strong><span>Collaborated with teammates on real-world project development.</span></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- Learning Section -->
+        <section id="learning" class="section learning-section">
+          <h2 class="numbered-heading">Learning</h2>
+          <div class="learning-layout">
+            <aside class="learning-focus">
+              <p class="learning-kicker">Always in progress</p>
+              <h3>Building a stronger foundation.</h3>
+              <p>
+                From computer science fundamentals to cloud infrastructure, I
+                keep learning by studying and putting new skills into practice.
+              </p>
+              <div class="focus-tags" aria-label="Current areas of study">
+                <span>Computer science</span>
+                <span>Python</span>
+                <span>Web development</span>
               </div>
-              <div class="tab-panels">
-                <div
-                  class="tab-panel"
-                  id="panel-0"
-                  role="tabpanel"
-                  tabindex="0"
-                  aria-labelledby="tab-0"
-                >
-                  <h3>
-                    <span>Frontend & Backend Intern</span>
-                    <span class="company">
-                      &nbsp;@&nbsp;
-                      <a
-                        href="https://novoxedtechllp.com/"
-                        class="inline-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Novox EdTech</a
-                      >
-                    </span>
-                  </h3>
-                  <p class="range">Internship Period</p>
-                  <div>
-                    <ul>
-                      <li>
-                        Built multiple frontend pages using HTML, CSS, and
-                        JavaScript including login interfaces, product UI, and
-                        basic dashboards
-                      </li>
-                      <li>
-                        Worked extensively with Django backend framework and
-                        PostgreSQL database
-                      </li>
-                      <li>
-                        Utilized Git for version control, including branching
-                        and stashing workflows
-                      </li>
-                      <li>
-                        Gained hands-on experience in full-stack development
-                        processes
-                      </li>
-                      <li>
-                        Collaborated with team members on real-world project
-                        development
-                      </li>
-                    </ul>
-                  </div>
+            </aside>
+            <div class="learning-list" aria-label="Education and certifications">
+              <article class="learning-item">
+                <p class="learning-year">2025 — Now</p>
+                <div class="learning-detail">
+                  <p class="learning-type">Education <span class="learning-status">In progress</span></p>
+                  <h3>Bachelor's in Computer Application</h3>
+                  <a href="https://vgu.ac.in/" class="inline-link" target="_blank" rel="noopener noreferrer">Vivekanada Global University <span aria-hidden="true">↗</span></a>
+                  <p class="learning-summary">Programming, web development, and computer science fundamentals.</p>
                 </div>
-                <div
-                  class="tab-panel"
-                  id="panel-1"
-                  role="tabpanel"
-                  tabindex="0"
-                  aria-labelledby="tab-1"
-                  hidden
-                >
-                  <h3>
-                    <span>Bachelor's in Computer Application</span>
-                    <span class="company">
-                      &nbsp;@&nbsp;
-                      <a
-                        href="https://vgu.ac.in/"
-                        class="inline-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Vivekanada Global University</a
-                      >
-                    </span>
-                  </h3>
-                  <p class="range">2025 - Present</p>
-                  <div>
-                    <ul>
-                      <li>
-                        Currently pursuing Bachelor's degree on online in
-                        Computer Application
-                      </li>
-                      <!-- <li>1st-year student focusing on programming fundamentals and software development</li> -->
-                      <li>
-                        Active participation in coding competitions and
-                        technical workshops
-                      </li>
-                      <li>
-                        Strong academic performance with focus on Python
-                        programming and web development
-                      </li>
-                    </ul>
-                  </div>
+              </article>
+              <article class="learning-item">
+                <p class="learning-year">2026</p>
+                <div class="learning-detail">
+                  <p class="learning-type">Certification</p>
+                  <h3>Microsoft Azure Administrator <span class="learning-code">AZ-104</span></h3>
+                  <a href="https://learn.microsoft.com/en-gb/users/rahulramesh-4307/?wt.mc_id=certnurture_eml1_email_wwl" class="inline-link" target="_blank" rel="noopener noreferrer">Microsoft <span aria-hidden="true">↗</span></a>
+                  <p class="learning-summary">Azure identity, storage, compute, networking, monitoring, and security.</p>
                 </div>
-
-                <div
-                  class="tab-panel"
-                  id="panel-2"
-                  role="tabpanel"
-                  tabindex="0"
-                  aria-labelledby="tab-2"
-                  hidden
-                >
-                  <h3>
-                    <span>Python & Web Development</span>
-                    <span class="company">
-                      &nbsp;@&nbsp;
-                      <a
-                        href="https://www.coursera.org/accomplishments"
-                        class="inline-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Coursera</a
-                      >
-                    </span>
-                  </h3>
-
-                  <p class="range">Year - 2024</p>
-                  <div>
-                    <ul>
-                      <li>
-                        Completed Python programming certification with focus on
-                        backend development
-                      </li>
-                      <!-- <li>Django framework certification covering models, views, templates, and REST APIs</li> -->
-                      <li>
-                        Web development fundamentals including HTML5, CSS3, and
-                        JavaScript ES6+
-                      </li>
-                      <li>
-                        Database management and SQL query optimization
-                        techniques
-                      </li>
-                    </ul>
-                    <h3>
-                      <span>Microsoft Azure Administrator</span>
-                      <span class="company">
-                        &nbsp;@&nbsp;
-                        <a
-                          href="https://learn.microsoft.com/en-gb/users/rahulramesh-4307/?wt.mc_id=certnurture_eml1_email_wwl"
-                          class="inline-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          >Microsoft</a
-                        >
-                      </span>
-                    </h3>
-
-                    <p class="range">Year - 2026</p>
-                    <div>
-                      <ul>
-                        <li>
-                          Successfully passed the Microsoft Azure Administrator
-                          (AZ-104) certification examination
-                        </li>
-                        <!-- <li>Django framework certification covering models, views, templates, and REST APIs</li> -->
-                        <li>
-                          Demonstrated knowledge of Azure identity and access
-                          management, storage, compute, and networking
-                        </li>
-                        <li>
-                          Covered Azure resource management, virtual machines,
-                          virtual networking, monitoring, and security
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              </article>
+              <article class="learning-item">
+                <p class="learning-year">2024</p>
+                <div class="learning-detail">
+                  <p class="learning-type">Coursework</p>
+                  <h3>Python &amp; Web Development</h3>
+                  <a href="https://www.coursera.org/accomplishments" class="inline-link" target="_blank" rel="noopener noreferrer">Coursera <span aria-hidden="true">↗</span></a>
+                  <p class="learning-summary">Python backend development, web fundamentals, and SQL.</p>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </section>

@@ -233,7 +233,7 @@ const smoothScrollTo = (target) => {
     
     window.scrollTo({
       top: elementPosition,
-      behavior: 'smooth'
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
     });
   }
 };
@@ -336,7 +336,6 @@ const toggleProjects = () => {
   if (!showingMore) {
     hiddenProjects.forEach(project => {
       project.style.display = 'block';
-      project.classList.add('just-revealed');
     });
     showMoreText.textContent = 'Show fewer projects';
     showMoreIcon.textContent = '↑';
@@ -345,7 +344,6 @@ const toggleProjects = () => {
   } else {
     hiddenProjects.forEach(project => {
       project.style.display = 'none';
-      project.classList.remove('just-revealed');
     });
     showMoreText.textContent = 'Show all projects';
     showMoreIcon.textContent = '↓';
@@ -360,7 +358,10 @@ if (showMoreButton) {
 
 // ===== SCROLL REVEAL ANIMATIONS =====
 // Apply scroll reveal only when the optional library is available.
-if (typeof ScrollReveal === 'function') {
+if (
+  typeof ScrollReveal === 'function' &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
   const sr = ScrollReveal({
     origin: 'bottom',
     distance: '20px',
@@ -383,12 +384,6 @@ if (typeof ScrollReveal === 'function') {
   sr.reveal('.hero p', { delay: 400 });
   sr.reveal('.hero .email-link', { delay: 500 });
   
-  sr.reveal('.numbered-heading', { delay: 100 });
-  sr.reveal('.about-content > div', { delay: 200, interval: 100 });
-  sr.reveal('.jobs-tabs', { delay: 200 });
-  sr.reveal('.project', { delay: 200, interval: 100 });
-  sr.reveal('.project-card', { delay: 200, interval: 100 });
-  sr.reveal('#contact', { delay: 200 });
 }
 
 // ===== FOCUS MANAGEMENT =====
@@ -442,25 +437,6 @@ if (prefersReducedMotion.matches) {
   // Disable animations for users who prefer reduced motion
   document.documentElement.style.setProperty('--transition', 'none');
 }
-
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('.project-card, .project, section').forEach(el => {
-  observer.observe(el);
-});
 
 // ===== KEYBOARD NAVIGATION =====
 document.addEventListener('keydown', (e) => {
