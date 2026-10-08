@@ -23,8 +23,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20261005-3" />
-    <link rel="stylesheet" href="css/redesign.css?v=20261009-3" />
+    <link rel="stylesheet" href="css/style.css?v=20261005-4" />
+    <link rel="stylesheet" href="css/redesign.css?v=20261009-9" />
     <script src="js/script.js?v=20261009-1" defer></script>
 
     <!-- Google Fonts -->
@@ -80,13 +80,48 @@
             aria-label="Switch to light mode"
             title="Switch to light mode"
           >
-            <svg class="theme-toggle__icon theme-toggle__sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-            <svg class="theme-toggle__icon theme-toggle__moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 15.8A8.5 8.5 0 0 1 8.2 3.8 8.5 8.5 0 1 0 20.2 15.8Z"/></svg>
+            <svg
+              class="theme-toggle__icon theme-toggle__sun"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              />
+            </svg>
+            <svg
+              class="theme-toggle__icon theme-toggle__moon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.2 15.8A8.5 8.5 0 0 1 8.2 3.8 8.5 8.5 0 1 0 20.2 15.8Z"
+              />
+            </svg>
           </button>
 
           <div class="nav__menu">
-            <button class="menu-btn" aria-label="Open navigation menu" aria-controls="mobile-navigation" aria-expanded="false" type="button">
-              <span class="menu-btn__icon" aria-hidden="true"><span class="menu-btn__burger"></span></span>
+            <button
+              class="menu-btn"
+              aria-label="Open navigation menu"
+              aria-controls="mobile-navigation"
+              aria-expanded="false"
+              type="button"
+            >
+              <span class="menu-btn__icon" aria-hidden="true"
+                ><span class="menu-btn__burger"></span
+              ></span>
             </button>
           </div>
         </div>
@@ -94,7 +129,12 @@
     </header>
 
     <!-- Mobile Menu -->
-    <aside id="mobile-navigation" class="mobile-menu" aria-hidden="true" tabindex="-1">
+    <aside
+      id="mobile-navigation"
+      class="mobile-menu"
+      aria-hidden="true"
+      tabindex="-1"
+    >
       <nav>
         <ol>
           <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
@@ -102,7 +142,9 @@
           <li><a href="#learning" onclick="closeMobileMenu()">Learning</a></li>
           <li><a href="#projects" onclick="closeMobileMenu()">Work</a></li>
           <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
-          <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+          <li>
+            <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+          </li>
         </ol>
         <a href="assets/cv-4.pdf" download="Desktop">Resume</a>
       </nav>
@@ -161,35 +203,72 @@
         <section class="hero">
           <div class="hero-main">
             <div class="hero-copy">
-              <p class="hero-eyebrow"><span class="hero-status" aria-hidden="true"></span>Rahul Ramesh <span class="hero-eyebrow-divider">/</span> Software Engineer</p>
-              <h1 class="big-heading">Software Engineer<span class="hero-period">.</span></h1>
-              <p class="hero-lead">I build practical web apps, with a focus on backend development.</p>
+              <p class="hero-eyebrow">
+                <span class="hero-status" aria-hidden="true"></span>Rahul Ramesh
+                <span class="hero-eyebrow-divider">/</span> Software Engineer
+              </p>
+              <h1 class="big-heading">
+                Software Engineer<span class="hero-period">.</span>
+              </h1>
+              <p class="hero-lead">
+                I build practical web apps, with a focus on backend development.
+              </p>
               <p class="hero-description">
                 My projects include a chat app, an online marketplace, and an
                 inventory system built with Python, Django, and JavaScript.
               </p>
               <div class="hero-actions">
                 <a class="email-link" href="#projects">Explore my work</a>
-                <a class="hero-text-link" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+                <a class="hero-text-link" href="contact.html"
+                  >Get in touch <span aria-hidden="true">↗</span></a
+                >
               </div>
             </div>
             <div class="hero-showcase" aria-label="Selected projects">
-              <a class="showcase-card showcase-card-main" href="#projects" aria-label="Explore the E-commerce Cart System project">
-                <span class="showcase-card-label">E-commerce Cart System <span aria-hidden="true">↗</span></span>
-                <img src="images/ecommerce-project.jpg" alt="E-commerce Cart System interface" />
+              <a
+                class="showcase-card showcase-card-main"
+                href="#projects"
+                aria-label="Explore the E-commerce Cart System project"
+              >
+                <span class="showcase-card-label"
+                  >E-commerce Cart System
+                  <span aria-hidden="true">↗</span></span
+                >
+                <img
+                  src="images/ecommerce-project.jpg"
+                  alt="E-commerce Cart System interface"
+                />
               </a>
-              <a class="showcase-card showcase-card-secondary" href="#projects" aria-label="Explore the Online Market project">
-                <img src="images/online market place.jpg" alt="Online Market project illustration" />
-                <span class="showcase-card-label">Online Market <span aria-hidden="true">↗</span></span>
+              <a
+                class="showcase-card showcase-card-secondary"
+                href="#projects"
+                aria-label="Explore the Online Market project"
+              >
+                <img
+                  src="images/online market place.jpg"
+                  alt="Online Market project illustration"
+                />
+                <span class="showcase-card-label"
+                  >Online Market <span aria-hidden="true">↗</span></span
+                >
               </a>
             </div>
           </div>
           <div class="hero-focus" aria-label="Areas of work">
             <span class="hero-focus-heading">What I work on</span>
             <ul>
-              <li><strong>Backend APIs</strong><span>Services, data, and integrations</span></li>
-              <li><strong>Full-stack applications</strong><span>From interface to backend</span></li>
-              <li><strong>Web automation</strong><span>Scraping and browser workflows</span></li>
+              <li>
+                <strong>Backend APIs</strong
+                ><span>Services, data, and integrations</span>
+              </li>
+              <li>
+                <strong>Full-stack applications</strong
+                ><span>From interface to backend</span>
+              </li>
+              <li>
+                <strong>Web automation</strong
+                ><span>Scraping and browser workflows</span>
+              </li>
             </ul>
           </div>
         </section>
@@ -218,12 +297,15 @@
                 <p>
                   I'm continuing to strengthen my knowledge of data structures
                   and algorithms, system design, asynchronous programming,
-                  scalable backend architecture, and modern software
-                  engineering practices as I pursue Software Engineering roles.
+                  scalable backend architecture, and modern software engineering
+                  practices as I pursue Software Engineering roles.
                 </p>
               </div>
 
-              <aside class="quick-overview" aria-labelledby="quick-overview-title">
+              <aside
+                class="quick-overview"
+                aria-labelledby="quick-overview-title"
+              >
                 <h3 id="quick-overview-title">Quick Overview</h3>
                 <dl class="overview-list">
                   <div>
@@ -252,7 +334,10 @@
                   </div>
                   <div>
                     <dt>Currently Exploring</dt>
-                    <dd>System Design · DSA · Backend Architecture · Async Programming</dd>
+                    <dd>
+                      System Design · DSA · Backend Architecture · Async
+                      Programming
+                    </dd>
                   </div>
                 </dl>
               </aside>
@@ -268,15 +353,48 @@
               <header class="experience-header">
                 <div class="experience-heading">
                   <h3>Frontend &amp; Backend Intern</h3>
-                  <p>at <a href="https://novoxedtechllp.com/" class="inline-link" target="_blank" rel="noopener noreferrer">Novox EdTech <span aria-hidden="true">↗</span></a></p>
+                  <p>
+                    at
+                    <a
+                      href="https://novoxedtechllp.com/"
+                      class="inline-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Novox EdTech <span aria-hidden="true">↗</span></a
+                    >
+                  </p>
                 </div>
                 <p class="experience-period">Internship Period</p>
               </header>
               <ul class="experience-list">
-                <li><strong>Frontend</strong><span>Built login interfaces, product pages, and basic dashboards using HTML, CSS, and JavaScript.</span></li>
-                <li><strong>Backend</strong><span>Worked with Django and PostgreSQL in full-stack development.</span></li>
-                <li><strong>Version control</strong><span>Used Git branching and stashing workflows to manage changes.</span></li>
-                <li><strong>Teamwork</strong><span>Collaborated with teammates on real-world project development.</span></li>
+                <li>
+                  <strong>Frontend</strong
+                  ><span
+                    >Built login interfaces, product pages, and basic dashboards
+                    using HTML, CSS, and JavaScript.</span
+                  >
+                </li>
+                <li>
+                  <strong>Backend</strong
+                  ><span
+                    >Worked with Django and PostgreSQL in full-stack
+                    development.</span
+                  >
+                </li>
+                <li>
+                  <strong>Version control</strong
+                  ><span
+                    >Used Git branching and stashing workflows to manage
+                    changes.</span
+                  >
+                </li>
+                <li>
+                  <strong>Teamwork</strong
+                  ><span
+                    >Collaborated with teammates on real-world project
+                    development.</span
+                  >
+                </li>
               </ul>
             </article>
           </div>
@@ -299,23 +417,50 @@
                 <span>Web development</span>
               </div>
             </aside>
-            <div class="learning-list" aria-label="Education and certifications">
+            <div
+              class="learning-list"
+              aria-label="Education and certifications"
+            >
               <article class="learning-item">
                 <p class="learning-year">2025 — Now</p>
                 <div class="learning-detail">
-                  <p class="learning-type">Education <span class="learning-status">In progress</span></p>
+                  <p class="learning-type">
+                    Education <span class="learning-status">In progress</span>
+                  </p>
                   <h3>Bachelor's in Computer Application</h3>
-                  <a href="https://vgu.ac.in/" class="inline-link" target="_blank" rel="noopener noreferrer">Vivekanada Global University <span aria-hidden="true">↗</span></a>
-                  <p class="learning-summary">Programming, web development, and computer science fundamentals.</p>
+                  <a
+                    href="https://vgu.ac.in/"
+                    class="inline-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Vivekanada Global University
+                    <span aria-hidden="true">↗</span></a
+                  >
+                  <p class="learning-summary">
+                    Programming, web development, and computer science
+                    fundamentals.
+                  </p>
                 </div>
               </article>
               <article class="learning-item">
                 <p class="learning-year">2026</p>
                 <div class="learning-detail">
                   <p class="learning-type">Certification</p>
-                  <h3>Microsoft Azure Administrator <span class="learning-code">AZ-104</span></h3>
-                  <a href="https://learn.microsoft.com/en-gb/users/rahulramesh-4307/?wt.mc_id=certnurture_eml1_email_wwl" class="inline-link" target="_blank" rel="noopener noreferrer">Microsoft <span aria-hidden="true">↗</span></a>
-                  <p class="learning-summary">Azure identity, storage, compute, networking, monitoring, and security.</p>
+                  <h3>
+                    Microsoft Azure Administrator
+                    <span class="learning-code">AZ-104</span>
+                  </h3>
+                  <a
+                    href="https://learn.microsoft.com/en-gb/users/rahulramesh-4307/?wt.mc_id=certnurture_eml1_email_wwl"
+                    class="inline-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Microsoft <span aria-hidden="true">↗</span></a
+                  >
+                  <p class="learning-summary">
+                    Azure identity, storage, compute, networking, monitoring,
+                    and security.
+                  </p>
                 </div>
               </article>
               <article class="learning-item">
@@ -323,8 +468,16 @@
                 <div class="learning-detail">
                   <p class="learning-type">Coursework</p>
                   <h3>Python &amp; Web Development</h3>
-                  <a href="https://www.coursera.org/accomplishments" class="inline-link" target="_blank" rel="noopener noreferrer">Coursera <span aria-hidden="true">↗</span></a>
-                  <p class="learning-summary">Python backend development, web fundamentals, and SQL.</p>
+                  <a
+                    href="https://www.coursera.org/accomplishments"
+                    class="inline-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Coursera <span aria-hidden="true">↗</span></a
+                  >
+                  <p class="learning-summary">
+                    Python backend development, web fundamentals, and SQL.
+                  </p>
                 </div>
               </article>
             </div>
@@ -417,7 +570,12 @@
                 </div>
               </div>
               <div class="project-image">
-                <a href="https://red-store-3jfj.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open E-commerce Cart System">
+                <a
+                  href="https://red-store-3jfj.onrender.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open E-commerce Cart System"
+                >
                   <img
                     src="images/ecommerce-project.jpg"
                     alt="E-commerce Cart System"
@@ -509,7 +667,12 @@
                 </div>
               </div>
               <div class="project-image">
-                <a href="https://user-chatbot-dr7g.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open Chatbot">
+                <a
+                  href="https://user-chatbot-dr7g.onrender.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Chatbot"
+                >
                   <img src="images/8440.jpg" alt="user-chat" />
                 </a>
               </div>
@@ -598,7 +761,12 @@
                 </div>
               </div>
               <div class="project-image">
-                <a href="https://online-shop-6ocq.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Online Market">
+                <a
+                  href="https://online-shop-6ocq.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Online Market"
+                >
                   <img src="images/online market place.jpg" alt="online-shop" />
                 </a>
               </div>
@@ -689,7 +857,12 @@
                 </div>
               </div>
               <div class="project-image">
-                <a href="https://inventory-management-system-1-qcui.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Inventory Management">
+                <a
+                  href="https://inventory-management-system-1-qcui.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Inventory Management"
+                >
                   <img src="images/inventory.png" alt="inventory" />
                 </a>
               </div>
@@ -700,9 +873,18 @@
               <div class="other-projects-heading">
                 <div>
                   <h3 class="other-projects-title">More projects</h3>
-                  <p>Smaller builds and experiments across APIs, automation, and web interfaces.</p>
+                  <p>
+                    Smaller builds and experiments across APIs, automation, and
+                    web interfaces.
+                  </p>
                 </div>
-                <a class="archive-link" href="https://github.com/rahulrameshm0?tab=repositories" target="_blank" rel="noopener noreferrer">View all repositories <span aria-hidden="true">↗</span></a>
+                <a
+                  class="archive-link"
+                  href="https://github.com/rahulrameshm0?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View all repositories <span aria-hidden="true">↗</span></a
+                >
               </div>
               <ul class="projects-grid" id="more-projects-grid">
                 <li class="project-card" data-tone="teal">
@@ -713,11 +895,25 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Banking System CLI</h4>
-                      <p class="project-description">A command-line banking app with admin and user menus, authentication, and basic transactions.</p>
+                      <p class="project-description">
+                        A command-line banking app with admin and user menus,
+                        authentication, and basic transactions.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>Python</li><li>CLI</li><li>File handling</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/Python-projects.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Banking System CLI">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>CLI</li>
+                        <li>File handling</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/Python-projects.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Banking System CLI"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
@@ -729,11 +925,25 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Login System</h4>
-                      <p class="project-description">Registration, login, and session management built with Django.</p>
+                      <p class="project-description">
+                        Registration, login, and session management built with
+                        Django.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>Django</li><li>Python</li><li>Sessions</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/Instagram-login-page.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Login System">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>Sessions</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/Instagram-login-page.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Login System"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
@@ -745,15 +955,33 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Omni Food</h4>
-                      <p class="project-description">A responsive food delivery interface with a product showcase and mobile layout.</p>
+                      <p class="project-description">
+                        A responsive food delivery interface with a product
+                        showcase and mobile layout.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>HTML</li><li>CSS</li><li>Responsive</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/Omni-food.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Omni Food">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Responsive</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/Omni-food.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Omni Food"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
-                <li class="project-card" data-tone="purple" style="display: none">
+                <li
+                  class="project-card"
+                  data-tone="purple"
+                  style="display: none"
+                >
                   <article class="project-inner">
                     <div class="project-card-art" aria-hidden="true">
                       <span class="project-card-kind">Backend API</span>
@@ -761,11 +989,24 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Django REST API</h4>
-                      <p class="project-description">CRUD endpoints and authentication built with Django REST Framework.</p>
+                      <p class="project-description">
+                        CRUD endpoints and authentication built with Django REST
+                        Framework.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>Python</li><li>Django REST</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/DRF.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Django REST API">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>Django REST</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/DRF.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Django REST API"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
@@ -777,11 +1018,25 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Python Web Scraper</h4>
-                      <p class="project-description">Browser-assisted data extraction with Beautiful Soup, Selenium, and pandas.</p>
+                      <p class="project-description">
+                        Browser-assisted data extraction with Beautiful Soup,
+                        Selenium, and pandas.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>Python</li><li>Selenium</li><li>Pandas</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/Python-Automation.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Python Web Scraper">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>Selenium</li>
+                        <li>Pandas</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/Python-Automation.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Python Web Scraper"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
@@ -793,15 +1048,32 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Blog Post API</h4>
-                      <p class="project-description">A FastAPI blog API with CRUD routes, Pydantic validation, and in-memory data handling.</p>
+                      <p class="project-description">
+                        A FastAPI blog API with CRUD routes, Pydantic
+                        validation, and in-memory data handling.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>FastAPI</li><li>Pydantic</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0/FastAPI-Blog.git" target="_blank" rel="noopener noreferrer" aria-label="View repository for Blog Post API">View repository <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>FastAPI</li>
+                        <li>Pydantic</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0/FastAPI-Blog.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View repository for Blog Post API"
+                        >View repository <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
-                <li class="project-card" data-tone="orange" style="display: none">
+                <li
+                  class="project-card"
+                  data-tone="orange"
+                  style="display: none"
+                >
                   <article class="project-inner">
                     <div class="project-card-art" aria-hidden="true">
                       <span class="project-card-kind">Productivity</span>
@@ -809,16 +1081,40 @@
                     </div>
                     <div class="project-card-content">
                       <h4 class="project-title">Task Management App</h4>
-                      <p class="project-description">Task creation, categories, deadlines, and progress tracking built with Django.</p>
+                      <p class="project-description">
+                        Task creation, categories, deadlines, and progress
+                        tracking built with Django.
+                      </p>
                     </div>
                     <div class="project-card-footer">
-                      <ul class="project-tech-list"><li>Django</li><li>Bootstrap</li><li>JavaScript</li></ul>
-                      <a class="project-card-link" href="https://github.com/rahulrameshm0?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for Task Management App">Browse repositories <span aria-hidden="true">↗</span></a>
+                      <ul class="project-tech-list">
+                        <li>Django</li>
+                        <li>Bootstrap</li>
+                        <li>JavaScript</li>
+                      </ul>
+                      <a
+                        class="project-card-link"
+                        href="https://github.com/rahulrameshm0?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Browse repositories for Task Management App"
+                        >Browse repositories
+                        <span aria-hidden="true">↗</span></a
+                      >
                     </div>
                   </article>
                 </li>
               </ul>
-              <button class="more-button" id="showMoreButton" type="button" aria-controls="more-projects-grid" aria-expanded="false"><span class="more-button-text">Show all projects</span><span class="more-button-icon" aria-hidden="true">↓</span></button>
+              <button
+                class="more-button"
+                id="showMoreButton"
+                type="button"
+                aria-controls="more-projects-grid"
+                aria-expanded="false"
+              >
+                <span class="more-button-text">Show all projects</span
+                ><span class="more-button-icon" aria-hidden="true">↓</span>
+              </button>
             </div>
           </div>
         </section>
@@ -828,28 +1124,57 @@
           <div class="services-heading">
             <div>
               <h2 class="numbered-heading">Services</h2>
-              <p class="services-intro">What I can help design, build, and improve.</p>
+              <p class="services-intro">
+                What I can help design, build, and improve.
+              </p>
             </div>
-            <p class="services-note">Practical software work across backend systems, user-facing products, and automation.</p>
+            <p class="services-note">
+              Practical software work across backend systems, user-facing
+              products, and automation.
+            </p>
           </div>
           <div class="services-grid">
             <article class="service-item">
               <span class="service-glyph" aria-hidden="true">{ }</span>
               <h3>Backend development</h3>
-              <p>APIs and server-side features with clear data models, authentication, and maintainable application logic.</p>
-              <ul aria-label="Backend technologies"><li>Python</li><li>Django</li><li>FastAPI</li><li>SQL</li></ul>
+              <p>
+                APIs and server-side features with clear data models,
+                authentication, and maintainable application logic.
+              </p>
+              <ul aria-label="Backend technologies">
+                <li>Python</li>
+                <li>Django</li>
+                <li>FastAPI</li>
+                <li>SQL</li>
+              </ul>
             </article>
             <article class="service-item">
               <span class="service-glyph" aria-hidden="true">↗</span>
               <h3>Full-stack applications</h3>
-              <p>Database-backed web applications, connecting useful interfaces to reliable backend workflows.</p>
-              <ul aria-label="Full-stack technologies"><li>JavaScript</li><li>React</li><li>REST APIs</li><li>PostgreSQL</li></ul>
+              <p>
+                Database-backed web applications, connecting useful interfaces
+                to reliable backend workflows.
+              </p>
+              <ul aria-label="Full-stack technologies">
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>REST APIs</li>
+                <li>PostgreSQL</li>
+              </ul>
             </article>
             <article class="service-item">
               <span class="service-glyph" aria-hidden="true">⌁</span>
               <h3>Web automation</h3>
-              <p>Browser automation and data collection workflows that reduce repetitive, manual work.</p>
-              <ul aria-label="Automation tools"><li>Playwright</li><li>Selenium</li><li>Scrapy</li><li>Python</li></ul>
+              <p>
+                Browser automation and data collection workflows that reduce
+                repetitive, manual work.
+              </p>
+              <ul aria-label="Automation tools">
+                <li>Playwright</li>
+                <li>Selenium</li>
+                <li>Scrapy</li>
+                <li>Python</li>
+              </ul>
             </article>
           </div>
         </section>
@@ -860,7 +1185,12 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-identity">
-          <a class="footer-mark" href="#content" aria-label="Rahul Ramesh, back to top">R<span>.</span></a>
+          <a
+            class="footer-mark"
+            href="#content"
+            aria-label="Rahul Ramesh, back to top"
+            >R<span>.</span></a
+          >
           <div>
             <strong>Rahul Ramesh</strong>
             <span>Software Engineer</span>
@@ -868,23 +1198,78 @@
         </div>
         <nav class="footer-links" aria-label="Footer links">
           <a href="contact.html">
-            <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-            <span class="footer-link-label">Contact</span><span class="footer-link-arrow" aria-hidden="true">↗</span>
+            <svg
+              class="footer-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"
+              />
+            </svg>
+            <span class="footer-link-label">Contact</span
+            ><span class="footer-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="https://github.com/rahulrameshm0" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-icon footer-icon--brand" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"/></svg>
-            <span class="footer-link-label">GitHub</span><span class="footer-link-arrow" aria-hidden="true">↗</span>
+          <a
+            href="https://github.com/rahulrameshm0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="footer-icon footer-icon--brand"
+              viewBox="0 0 512 512"
+              aria-hidden="true"
+            >
+              <path
+                d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"
+              />
+            </svg>
+            <span class="footer-link-label">GitHub</span
+            ><span class="footer-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="https://linkedin.com/in/rahulrameshm0" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-icon footer-icon--brand" viewBox="0 0 512 512" aria-hidden="true"><path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"/></svg>
-            <span class="footer-link-label">LinkedIn</span><span class="footer-link-arrow" aria-hidden="true">↗</span>
+          <a
+            href="https://linkedin.com/in/rahulrameshm0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="footer-icon footer-icon--brand"
+              viewBox="0 0 512 512"
+              aria-hidden="true"
+            >
+              <path
+                d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"
+              />
+            </svg>
+            <span class="footer-link-label">LinkedIn</span
+            ><span class="footer-link-arrow" aria-hidden="true">↗</span>
           </a>
           <a href="mailto:rahulrameshm98@gmail.com">
-            <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
-            <span class="footer-link-label">Email</span><span class="footer-link-arrow" aria-hidden="true">↗</span>
+            <svg
+              class="footer-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m3 6 9 7 9-7" />
+            </svg>
+            <span class="footer-link-label">Email</span
+            ><span class="footer-link-arrow" aria-hidden="true">↗</span>
           </a>
         </nav>
-        <a class="footer-top" href="#content">Back to top <span aria-hidden="true">↑</span></a>
+        <a class="footer-top" href="#content"
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
       </div>
     </footer>
   </body>
