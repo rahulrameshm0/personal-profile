@@ -87,10 +87,10 @@ main.contact-page-main > .contact-page {
   min-height: 48px;
   margin-top: 22px;
   padding: 0 17px;
-  border: 1px solid var(--green);
+  border: 1px solid #ffffff;
   border-radius: 7px;
-  background: var(--green);
-  color: var(--hero-button-text);
+  background: #ffffff;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -98,7 +98,7 @@ main.contact-page-main > .contact-page {
 }
 .contact-page__whatsapp svg { width: 19px; height: 19px; }
 .contact-page__whatsapp-arrow { margin-left: 10px; font-size: 16px; }
-.contact-page__whatsapp:hover { color: var(--hero-button-text); filter: brightness(1.07); transform: translateY(-1px); }
+.contact-page__whatsapp:hover { color: #000000; background: #e0e0e0; border-color: #e0e0e0; transform: translateY(-1px); }
 .contact-page__whatsapp:focus-visible { outline: 3px solid var(--green-tint); outline-offset: 3px; }
 
 .contact-page__form-wrap {
@@ -113,16 +113,7 @@ main.contact-page-main > .contact-page {
 }
 
 .contact-page__form-wrap::after {
-  position: absolute;
-  z-index: 0;
-  top: -150px;
-  right: -135px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--green-tint), transparent 68%);
-  content: "";
-  pointer-events: none;
+  display: none;
 }
 
 .contact-page__form-heading {
@@ -221,18 +212,22 @@ main.contact-page-main > .contact-page {
   min-width: 218px;
   min-height: 50px;
   padding: 0 17px;
-  border: 1px solid var(--green);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 7px;
-  background: var(--green);
-  color: var(--hero-button-text);
+  background: transparent;
+  color: #1a1a1a;
   font: 600 14px var(--font-sans);
   cursor: pointer;
-  transition: none;
+  transition: all 0.2s ease;
 }
 
 .contact-form__submit span { font-size: 17px; }
 .contact-form__submit:hover,
-.contact-form__submit:focus-visible { filter: brightness(1.04); }
+.contact-form__submit:focus-visible {
+  border-color: #000000;
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
 .contact-form__note { max-width: 32ch; margin: 0; color: var(--slate); font-size: 11px; line-height: 1.65; }
 .contact-form__note[data-state="error"] { color: #f0a090; }
 

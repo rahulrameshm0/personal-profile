@@ -2,35 +2,34 @@
 :root {
   color-scheme: dark;
   --dark-navy: #020c1b;
-  --navy: #070f1f;
+  --navy: #000000;
   --light-navy: #121c33;
   --lightest-navy: #2a3555;
   --navy-shadow: rgba(2, 12, 27, 0.55);
   --dark-slate: #495670;
-  --slate: #94a3b8;
-  --light-slate: #b8c5d9;
-  --lightest-slate: #e2e8f0;
-  --white: #f8fafc;
-  --green: #5eead4;
-  --green-muted: rgba(94, 234, 212, 0.55);
-  --green-tint: rgba(94, 234, 212, 0.12);
-  --green-border: rgba(94, 234, 212, 0.22);
+  --slate: #9ca3af;
+  --light-slate: #d1d5db;
+  --lightest-slate: #e5e7eb;
+  --white: #f3f4f6;
+  --green: #9ca3af;
+  --green-muted: rgba(255, 255, 255, 0.2);
+  --green-tint: rgba(255, 255, 255, 0.03);
+  --green-border: rgba(255, 255, 255, 0.08);
   --pink: #e879f9;
   --blue: #38bdf8;
 
-  --surface: rgba(18, 28, 51, 0.65);
-  --surface-solid: #121c33;
+  --surface: #000000;
+  --surface-solid: #000000;
   --glass-border: rgba(148, 163, 184, 0.12);
   --page-background-image:
-    radial-gradient(ellipse 120% 80% at 50% -25%, rgba(94, 234, 212, 0.14), transparent 52%),
-    radial-gradient(ellipse 55% 45% at 100% 15%, rgba(56, 189, 248, 0.09), transparent 50%),
-    radial-gradient(ellipse 45% 40% at 0% 85%, rgba(232, 121, 249, 0.06), transparent 48%),
-    linear-gradient(180deg, var(--navy) 0%, #060b18 100%);
-  --header-background: rgba(7, 15, 31, 0.72);
-  --header-scrolled-background: rgba(7, 15, 31, 0.82);
-  --menu-background: linear-gradient(165deg, rgba(18, 28, 51, 0.98) 0%, rgba(7, 15, 31, 0.99) 100%);
-  --project-background: linear-gradient(165deg, rgba(18, 28, 51, 0.9), rgba(12, 18, 35, 0.95));
-  --footer-background: linear-gradient(180deg, transparent, rgba(7, 15, 31, 0.5));
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  --header-background: rgba(0, 0, 0, 0.85);
+  --header-scrolled-background: rgba(0, 0, 0, 0.92);
+  --menu-background: linear-gradient(165deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.99) 100%);
+  --project-background: linear-gradient(165deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+  --footer-background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
 
   --font-sans: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", ui-monospace, monospace;
@@ -49,9 +48,9 @@
   --radius-lg: 14px;
   --border-radius: 10px;
 
-  --shadow-sm: 0 4px 24px rgba(2, 12, 27, 0.35);
-  --shadow-md: 0 12px 40px rgba(2, 12, 27, 0.45);
-  --shadow-glow: 0 0 60px rgba(94, 234, 212, 0.08);
+  --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 2px 12px rgba(0, 0, 0, 0.3);
 
   --nav-height: 100px;
   --nav-scroll-height: 70px;
@@ -82,7 +81,7 @@
   --light-slate: #334155;
   --lightest-slate: #172033;
   --white: #101827;
-  --green: #087f70;
+  --green: #6b7280;
   --green-muted: rgba(8, 127, 112, 0.5);
   --green-tint: rgba(8, 127, 112, 0.08);
   --green-border: rgba(8, 127, 112, 0.22);
@@ -570,9 +569,9 @@ code {
 .button:hover,
 .button:focus,
 .button:active {
-  background-color: var(--green-tint);
-  border-color: var(--green-muted);
-  box-shadow: var(--shadow-glow);
+  background-color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   outline: none;
   transform: translateY(-1px);
 }
@@ -600,11 +599,11 @@ code {
 .email-link:hover,
 .email-link:focus,
 .email-link:active {
-  background-color: var(--green-tint);
-  border-color: var(--green-muted);
-  box-shadow: var(--shadow-glow);
+  background-color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   outline: none;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .email-link:after {
@@ -780,10 +779,10 @@ code {
   width: 42px;
   height: 42px;
   padding: 0;
-  border: 1px solid var(--green-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--lightest-slate);
+  background: #000000;
+  color: #e5e7eb;
   transition: var(--transition);
 }
 
@@ -795,9 +794,9 @@ code {
 }
 
 .theme-toggle:hover {
-  border-color: var(--green-muted);
-  background: var(--green-tint);
-  color: var(--green);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .theme-toggle:focus-visible {
