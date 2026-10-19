@@ -23,8 +23,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20261005-4" />
-    <link rel="stylesheet" href="css/redesign.css?v=20261009-9" />
+    <link rel="stylesheet" href="css/style.css?v=20261019-1" />
+    <link rel="stylesheet" href="css/redesign.css?v=20261019-3" />
     <script src="js/script.js?v=20261009-1" defer></script>
     <link rel="stylesheet" href="css/creative.css?v=3" />
     <script src="js/creative.js?v=3" defer></script>
@@ -263,19 +263,50 @@
         </section>
 
         <section class="build-toolkit" aria-labelledby="toolkit-title">
-          <div class="toolkit-heading"><h2 id="toolkit-title">Inside my toolkit</h2><p>Choose a layer to see how I build.</p></div>
+          <div class="toolkit-heading">
+            <h2 id="toolkit-title">Inside my toolkit</h2>
+            <p>Choose a layer to see how I build.</p>
+          </div>
           <div class="toolkit-layout">
-            <div class="toolkit-controls" role="group" aria-label="Explore my skills">
-              <button type="button" data-layer="interface" aria-pressed="false"><span>Interface</span><small>What people interact with</small></button>
-              <button type="button" data-layer="backend" aria-pressed="true"><span>Backend</span><small>Where the logic lives</small></button>
-              <button type="button" data-layer="data" aria-pressed="false"><span>Data</span><small>Keeping everything connected</small></button>
-              <button type="button" data-layer="automation" aria-pressed="false"><span>Automation</span><small>Making repetitive work easier</small></button>
+            <div
+              class="toolkit-controls"
+              role="group"
+              aria-label="Explore my skills"
+            >
+              <button type="button" data-layer="interface" aria-pressed="false">
+                <span>Interface</span><small>What people interact with</small>
+              </button>
+              <button type="button" data-layer="backend" aria-pressed="true">
+                <span>Backend</span><small>Where the logic lives</small>
+              </button>
+              <button type="button" data-layer="data" aria-pressed="false">
+                <span>Data</span><small>Keeping everything connected</small>
+              </button>
+              <button
+                type="button"
+                data-layer="automation"
+                aria-pressed="false"
+              >
+                <span>Automation</span
+                ><small>Making repetitive work easier</small>
+              </button>
             </div>
             <div class="toolkit-detail" aria-live="polite" aria-atomic="true">
-              <p class="toolkit-stack" id="toolkit-stack">Python / Django / FastAPI</p>
+              <p class="toolkit-stack" id="toolkit-stack">
+                Python / Django / FastAPI
+              </p>
               <h3 id="toolkit-name">The engine behind the interface.</h3>
-              <p id="toolkit-description">Authentication, application logic, and APIs that connect the frontend to useful workflows.</p>
-              <a id="toolkit-link" href="https://github.com/rahulrameshm0/DRF.git" target="_blank" rel="noopener noreferrer">Explore my Django REST API</a>
+              <p id="toolkit-description">
+                Authentication, application logic, and APIs that connect the
+                frontend to useful workflows.
+              </p>
+              <a
+                id="toolkit-link"
+                href="https://github.com/rahulrameshm0/DRF.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Explore my Django REST API</a
+              >
             </div>
           </div>
         </section>
@@ -495,10 +526,50 @@
         <section id="projects" class="section">
           <h2 class="numbered-heading">Selected work</h2>
           <div class="work-explorer" hidden>
-            <div class="work-explorer__search"><label for="work-search">Find a featured project</label><input id="work-search" type="search" placeholder="Try Django, chat, or inventory…" autocomplete="off" /></div>
-            <div class="work-explorer__filters" role="group" aria-label="Filter featured work"><button type="button" data-work-filter="all" aria-pressed="true">All work</button><button type="button" data-work-filter="commerce" aria-pressed="false">Commerce</button><button type="button" data-work-filter="social" aria-pressed="false">Social &amp; chat</button><button type="button" data-work-filter="tools" aria-pressed="false">Business tools</button></div>
+            <div class="work-explorer__search">
+              <label for="work-search">Find a featured project</label
+              ><input
+                id="work-search"
+                type="search"
+                placeholder="Try Django, chat, or inventory…"
+                autocomplete="off"
+              />
+            </div>
+            <div
+              class="work-explorer__filters"
+              role="group"
+              aria-label="Filter featured work"
+            >
+              <button type="button" data-work-filter="all" aria-pressed="true">
+                All work</button
+              ><button
+                type="button"
+                data-work-filter="commerce"
+                aria-pressed="false"
+              >
+                E-Commerce</button
+              ><button
+                type="button"
+                data-work-filter="social"
+                aria-pressed="false"
+              >
+                Social &amp; chat</button
+              ><button
+                type="button"
+                data-work-filter="tools"
+                aria-pressed="false"
+              >
+                Business tools
+              </button>
+            </div>
             <p id="work-results" role="status"></p>
-            <div id="work-empty" hidden><p>No featured projects match. Try another term or explore all work.</p><button type="button" id="work-reset">Clear filters</button></div>
+            <div id="work-empty" hidden>
+              <p>
+                No featured projects match. Try another term or explore all
+                work.
+              </p>
+              <button type="button" id="work-reset">Clear filters</button>
+            </div>
           </div>
           <div class="inner">
             <!-- Featured Project 1 -->
@@ -687,10 +758,7 @@
                   rel="noopener noreferrer"
                   aria-label="Open E-commerce Cart System"
                 >
-                  <img
-                    src="images/image.png"
-                    alt="mini-linkedin"
-                  />
+                  <img src="images/image.png" alt="mini-linkedin" />
                 </a>
               </div>
             </div>
@@ -1007,7 +1075,8 @@
                     <div class="project-card-content">
                       <h4 class="project-title">Web Scraping Website</h4>
                       <p class="project-description">
-                        Search for short videos, choose how many results to show, and download videos individually or all at once.
+                        Search for short videos, choose how many results to
+                        show, and download videos individually or all at once.
                       </p>
                     </div>
                     <div class="project-card-footer">
@@ -1037,7 +1106,9 @@
                     <div class="project-card-content">
                       <h4 class="project-title">Note Saver</h4>
                       <p class="project-description">
-                        A React and Django app to create, view, and delete personal notes, with user registration, login, and JWT authentication.
+                        A React and Django app to create, view, and delete
+                        personal notes, with user registration, login, and JWT
+                        authentication.
                       </p>
                     </div>
                     <div class="project-card-footer">
