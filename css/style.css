@@ -104,6 +104,11 @@
   --shadow-glow: 0 0 40px rgba(82, 97, 118, 0.09);
 }
 
+title{
+  font-family: var(--font-mono)
+}
+
+
 /* ===== GLOBAL STYLES ===== */
 html {
   box-sizing: border-box;
